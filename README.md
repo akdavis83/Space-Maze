@@ -22,4 +22,3 @@ There are several ways to launch the game. Here is the simplest:
 
 1. Clone or download the repository
 2. Play on the website
-3. Get the app in the store
