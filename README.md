@@ -1,13 +1,11 @@
 # Astray
 
-A WebGL maze game built with Three.js and Box2dWeb. Play it here: http://wwwtyro.github.io/Astray/
+A WebGL maze game built with Three.js and Box2dWeb. Play it here: https://akdavis83.github.io/Space-Maze/
 
 ### Launching
 
 There are several ways to launch the game. Here is the simplest:
 
 1. Clone or download the repository
-2. Navigate to Astray's directory
-3. Start 'python -m SimpleHTTPServer' in your shell (for python 3.0 and above type 'python -m http.server' in your shell)
-4. Open 'localhost:8000' in your browser
-5. Enjoy!
+2. Play on the website
+3. Get the app in the store
