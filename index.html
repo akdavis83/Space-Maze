@@ -24,9 +24,9 @@
                 ballMesh       = undefined,
                 ballRadius     = 0.25,
                 keyAxis        = [0, 0],
-                ironTexture    = THREE.ImageUtils.loadTexture('/nasa.jpg'),
-                planeTexture   = THREE.ImageUtils.loadTexture('/nasa.png'),
-                brickTexture   = THREE.ImageUtils.loadTexture('/nasa.jpg'),
+                ironTexture    = THREE.ImageUtils.loadTexture('nasa.jpg'),
+                planeTexture   = THREE.ImageUtils.loadTexture('nasa.png'),
+                brickTexture   = THREE.ImageUtils.loadTexture('nasa.jpg'),
                 gameState      = undefined,
 
             // Box2D shortcuts
@@ -296,9 +296,7 @@
                 KeyboardJS.bind.axis('h', 'l', 'j', 'k', onMoveKey);
                 $(window).resize(onResize);
                 function changeMazeDimension(newDimension) {
-                mazeDimension = newDimension;
-                gameState = 'initialize';
-              }
+              
 
                 // Set the initial game state.
                 gameState = 'initialize';
