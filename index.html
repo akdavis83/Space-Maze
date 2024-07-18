@@ -24,9 +24,9 @@
                 ballMesh       = undefined,
                 ballRadius     = 0.25,
                 keyAxis        = [0, 0],
-                ironTexture    = THREE.ImageUtils.loadTexture('nasa.jpg'),
-                planeTexture   = THREE.ImageUtils.loadTexture('nasa.png'),
-                brickTexture   = THREE.ImageUtils.loadTexture('nasa.jpg'),
+                ironTexture    = THREE.ImageUtils.loadTexture('/nasa.jpg'),
+                planeTexture   = THREE.ImageUtils.loadTexture('/nasa.png'),
+                brickTexture   = THREE.ImageUtils.loadTexture('/nasa.jpg'),
                 gameState      = undefined,
 
             // Box2D shortcuts
@@ -295,8 +295,10 @@
                 KeyboardJS.bind.axis('left', 'right', 'down', 'up', onMoveKey);
                 KeyboardJS.bind.axis('h', 'l', 'j', 'k', onMoveKey);
                 $(window).resize(onResize);
-               
-              
+                function changeMazeDimension(newDimension) {
+                mazeDimension = newDimension;
+                gameState = 'initialize';
+              }
 
                 // Set the initial game state.
                 gameState = 'initialize';
@@ -318,8 +320,36 @@ buttonContainer.querySelectorAll('button').forEach(button => {
   button.style.cursor = 'pointer';
 });
 
+
         </script>
     
+        <script>
+            let hours = 0;
+            let minutes = 0;
+            let seconds = 0;
+          
+            function timer() {
+              document.getElementById("timer").innerHTML = `${pad(hours)}:${pad(minutes)}:${pad(seconds)}`;
+              seconds++;
+              if (seconds === 60) {
+                minutes++;
+                seconds = 0;
+              }
+              if (minutes === 60) {
+                hours++;
+                minutes = 0;
+              }
+            }
+          
+            function pad(number) {
+              return (number < 10 ? "0" : "") + number;
+            }
+          
+            setInterval(timer, 1000);
+          </script>
+          
+          
+
         <style>
         
             body {
@@ -393,11 +423,11 @@ buttonContainer.querySelectorAll('button').forEach(button => {
     </div>
     
     <div id='help'>
-        Hold down 'I' key for instructions & Levels.
+        Hold down 'I' key for instructions & Levels. <span id="timer">00:00:00</span>
     </div>
 
     <div id='level'>
-        Level 1
+        Level 1 <span id="timer" style="color: gold;">00:00:00</span>
     </div>
     
     </body>

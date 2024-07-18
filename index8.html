@@ -1,7 +1,7 @@
 <html>
 
     <head>
-        <title>Final~Level 152</title>
+        <title>Infinite~Level 0</title>
         <link rel="icon" href="https://fav.farm/🔥" />
         <script src='Box2dWeb.min.js'></script>
         <script src="Three.js"></script>
@@ -24,9 +24,9 @@
                 ballMesh       = undefined,
                 ballRadius     = 0.25,
                 keyAxis        = [0, 0],
-                ironTexture    = THREE.ImageUtils.loadTexture('nasa.jpg'),
-                planeTexture   = THREE.ImageUtils.loadTexture('nasa.png'),
-                brickTexture   = THREE.ImageUtils.loadTexture('nasa.jpg'),
+                ironTexture    = THREE.ImageUtils.loadTexture('/nasa.jpg'),
+                planeTexture   = THREE.ImageUtils.loadTexture('/nasa.png'),
+                brickTexture   = THREE.ImageUtils.loadTexture('/nasa.jpg'),
                 gameState      = undefined,
 
             // Box2D shortcuts
@@ -321,7 +321,30 @@ buttonContainer.querySelectorAll('button').forEach(button => {
 });
 
         </script>
-    
+        <script>
+            let hours = 0;
+            let minutes = 0;
+            let seconds = 0;
+          
+            function timer() {
+              document.getElementById("timer").innerHTML = `${pad(hours)}:${pad(minutes)}:${pad(seconds)}`;
+              seconds++;
+              if (seconds === 60) {
+                minutes++;
+                seconds = 0;
+              }
+              if (minutes === 60) {
+                hours++;
+                minutes = 0;
+              }
+            }
+          
+            function pad(number) {
+              return (number < 10 ? "0" : "") + number;
+            }
+          
+            setInterval(timer, 1000);
+          </script>
         <style>
         
             body {
@@ -381,7 +404,7 @@ buttonContainer.querySelectorAll('button').forEach(button => {
         <br><br>
         Use the arrow keys to move the ball and find the exit to the maze.
         <br><br>
-        Help Hint: Any level over 50 is massively large to navigate, good luck!
+        Help Hint: DO NOT LEVEL UP FROM THIS LEVEL, refresh the page or link to a higher level, Good Luck!
         <br><br>
          <div id="dimension-buttons">
         
@@ -401,7 +424,7 @@ buttonContainer.querySelectorAll('button').forEach(button => {
     </div>
 
     <div id='level'>
-        Level 1
+        Level 1 <span id="timer" style="color: gold;">00:00:00</span>
     </div>
    
     </body>
